@@ -23,5 +23,40 @@ void loop() {
 ```
 Al igual que con la función `void setup()`, el sketch por defecto de Arduino incluirá un texto comentado que indica el uso de esta función, el cual dice que el código de esa función se ejecutará repetidamente. Esta función es, en la gran mayoría de ocaciones, el cuerpo principal del programa Arduino, pues suele usarse para colocar el código principal, el cual se ejecutará siempre que el Arduino reciba la alimentación necesaria.
 ## Introducción al Código
+Arduino está hecho en base a C, es por esto que tienen una estructura similar y se comparten ciertas funciones, un ejemplo de similitudes entre Arduino y C se encuentra en la declaración de variables.
 ### Variables
+Las variables son "Casillas de Memoria" en donde se guardarán los valores que necesitemos, estas hallan su utilidad cuando debemos acceder a valores que varian a lo largo del transcurso del programa, o cuando debemos usar cierto valor repetidas veces y no se quiere escribir el valor específico cada vez que se lo utiliza (Además que ayuda a cambiar todas las repeticiones de ese valor con solo cambiar la asignación de la variable).
+
+Para declarar una variable en Arduino debemos seguir una sencilla serie de pasos. En primer lugar, nos ubicaremos en la zona de [Declaración](#declaración) para mantener el orden dentro de nuestro programa. A continuación definimos el tipo de dato que emplearemos. Para terminar, elegimos un nombre para nuestra variable. Dentro de esta línea es opcional asignarle un valor a la variable. Un ejemplo se muestra a continuación:
+```
+int variable = 15;
+```
+Cabe recalcar que la declaración de constantes es igual a la declaración de variables, con la única diferencia de que se añade `const` al inicio de la línea:
+```
+const int constante = 16;
+```
 ### Funciones básicas
+Arduino posee algunas funciones que son básicas para cualquier programa que desee realizarse, obviamente no todos los programas las emplean, pero suelen ser bastante utilizadas, algunas de estas funciones son:
+* **pinMode**
+
+  Es una función que suele usarse en el [Setup](#setup). Su utilidad en el programa radica en definir las entradas y salidas de la placa Arduino. Para esto sigue la siguiente estructura:
+  ```
+  pinMode(pin, modo);
+  ```
+  Donde: 
+  - *pin* se refiere al pin de la placa Arduino (los cuales se enumeran de 0 a 13 para los pines digitales y desde A0 a A5 para los pines analogicos, ambos en el caso de Arduino UNO).
+  - *modo* se refiere al modo que tomará el pin, pudiendo ser una Entrada (INPUT) o una Salida (OUTPUT).
+* **delay**
+  
+  Tiene la función de detener el flujo de código por cierta cantidad de milisegundos. Sigue la siguiente estructura:
+  ```
+  delay(millis);
+  ```
+  Donde:
+  - *millis* se refiere a la cantidad de milisegundos que se detendrá el programa.
+* **Serial.begin**
+
+  Esta es una función que inicializa el puerto serial y sirve para comenzar con todas las funciones que tiene la clase Serial. El puerto serial se verá en profundidad más adelante en el curso. 
+* **Serial.println y Serial.print**
+
+  Estas son funciones que dependen del puerto serial, por lo que deben ejecutarse despues de un `Serial.begin`, su uso es imprimir información en el monitor serial, el cual también se verá a detalle más adelante en el curso.
