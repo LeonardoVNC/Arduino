@@ -44,7 +44,7 @@ Arduino posee algunas funciones que son básicas para cualquier programa que des
   pinMode(pin, modo);
   ```
   Donde: 
-  - *pin* se refiere al pin de la placa Arduino (los cuales se enumeran de 0 a 13 para los pines digitales y desde A0 a A5 para los pines analogicos, ambos en el caso de Arduino UNO).
+  - *pin* se refiere al pin de la placa Arduino (los cuales se enumeran de 0 a 13 para los pines digitales y desde A0 a A5 para los pines analógicos, ambos en el caso de Arduino UNO).
   - *modo* se refiere al modo que tomará el pin, pudiendo ser una Entrada (INPUT) o una Salida (OUTPUT).
 * **delay**
   
@@ -60,3 +60,21 @@ Arduino posee algunas funciones que son básicas para cualquier programa que des
 * **Serial.println y Serial.print**
 
   Estas son funciones que dependen del puerto serial, por lo que deben ejecutarse despues de un `Serial.begin`, su uso es imprimir información en el monitor serial, el cual también se verá a detalle más adelante en el curso.
+* **digitalWrite**
+
+  Es una función que establece un pin de salida como 1 ó 0, es decir, si envía voltaje o no. Sigue la siguiente estructura: 
+  ```
+  digitalWrite(pin, modo);
+  ```
+  Donde:
+  - *pin* se refiere a uno de los pines de la placa Arduino.
+  - *modo* se refiere al modo que tomará la salida, siendo HIGH para un 1 o LOW para un 0.
+
+Con esto termina la introducción a Arduino. Además se ha añadido un pequeño programa que muestra un poco de los conceptos que se han establecido hasta el momento.
+
+Las conexiones empleadas para el [Programa](primerSketch) son las siguientes:
+<div id="PrimerPrograma">
+  <ul align="center">
+    <img alt="JPG" src="https://i.ibb.co/zrLpbhm/Primer-Programa.jpg">
+    </ul>
+</div>
