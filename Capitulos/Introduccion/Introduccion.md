@@ -72,7 +72,7 @@ Arduino posee algunas funciones que son básicas para cualquier programa que des
 
 Con esto termina la introducción a Arduino. Además se ha añadido un pequeño programa que muestra un poco de los conceptos que se han establecido hasta el momento.
 
-Las conexiones empleadas para el [Programa](primerSketch) son las siguientes:
+Las conexiones empleadas para el [Programa](primerSketch.ino) son las siguientes:
 <div id="PrimerPrograma">
   <ul align="center">
     <img alt="JPG" src="https://i.ibb.co/zrLpbhm/Primer-Programa.jpg">
