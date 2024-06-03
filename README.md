@@ -1,7 +1,7 @@
 # Arduino
 Este repositorio está destinado a ser una guía rápida para Arduino, tanto en el montaje de los circuitos como en la escritura del Programa.
 ## Capítulos
-**1. [Introducción](Capitulos\Introduccion)**: Pequeña y básica introducción a la estructura de código utilizada en Arduino y a las funciones más básicas empleadas en la construcción de la gran mayoría de programas Arduino.
+**1. [Introducción](Capitulos\Introduccion\Introduccion.md)**: Pequeña y básica introducción a la estructura de código utilizada en Arduino y a las funciones más básicas empleadas en la construcción de la gran mayoría de programas Arduino.
 
 **2. [Monitor Serial](Capitulos\MonitorSerial\MonitorSerial.md)**: Introducción al uso del monitor serial, la ventana que comunica al usuario con el Arduino. Se detalla como mostrar datos en la pantalla y como ingresar información al programa desde el teclado.
 
