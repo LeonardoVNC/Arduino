@@ -32,10 +32,38 @@ void setup() {
   Serial.begin(9600);
 }
 void loop() {
-  char input = Serial.read();
+  input = Serial.read();
   Serial.print("La entrada es: ");
   Serial.println(input);
   delay(1000);
 }
 ```
-`Serial.read();` leera los datos caractér por caractér, sobre-escribiendo al valor anterior con cada llamada al método que se ejecute. En caso de no existir un dato a leer en el Monitor Serial, el char se sobre-escribira con "�". Es decir, por defecto `Serial.read();` no esperará a que introduzcamos un dato para seguir con el flujo del programa, se debe tener cuidado con esto.
+`Serial.read();` leera los datos caractér por caractér, sobre-escribiendo al valor anterior con cada llamada al método que se ejecute. 
+
+En caso de no existir un dato a leer en el Monitor Serial, el char se sobre-escribira con "�". Es decir, por defecto `Serial.read();` no esperará a que introduzcamos un dato para seguir con el flujo del programa, se debe tener cuidado con esto. Para evitar este problema se puede hacer uso de la función `Serial.available();`, la cual devuelve un valor int que indica cuantos caractéres tiene a continuación el monitor serial, por lo que podemos usar un if para confirmar la entrada de datos y asi no sobreescribir la variable de no ser necesario:
+```
+char input;
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+  if (Serial.available() > 0) {
+    input = Serial.read();
+    Serial.print("La entrada es: ");
+    Serial.println(input);
+    delay(1000);
+  }
+}
+
+```
+De modo que si hay 1 o más caractéres disponibles para leer se sobreescribirá la información alojada en la variable input, caso contrario, se ignorará el bloque de código.
+
+
+Con esto termina este capítulo. Al igual que con el capítulo anterior, se ha añadido un pequeño programa que muestra un poco de los conceptos presentados en este documento.
+
+Las conexiones empleadas para el [Programa](pruebaMonitorSerial.ino) son las mismas del anterior capítulo, es decir, las siguientes:
+<div id="monitorSerial">
+  <ul align="center">
+    <img alt="JPG" src="https://i.ibb.co/zrLpbhm/Primer-Programa.jpg">
+    </ul>
+</div>
