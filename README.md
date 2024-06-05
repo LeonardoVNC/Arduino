@@ -5,6 +5,8 @@ Este repositorio está destinado a ser una guía rápida para Arduino, tanto en 
 
 **2. [Monitor Serial](Capitulos/MonitorSerial/MonitorSerial.md)**: Introducción al uso del monitor serial, la ventana que comunica al usuario con el Arduino. Se detalla como mostrar datos en la pantalla y como ingresar información al programa desde el teclado.
 
+**3. [Entrada Analógica](Capitulos/EntradaAnalogica/EntradaAnalogica.md)**: Introducción al concepto de los pines analógicos, los encargados de la lectura de datos de sensorizado. Se dan ejemplos de uso con potenciómetros.
+
 Se tiene planeado que cada capítulo contenga un MarkDown que explique la teoría y los conceptos referentes al tema, y un programa de apoyo en Arduino el cual puede utilizarse para probar los conceptos aprendidos. Si bien estos programas son completamente funcionales se incita a crear nuevos para practicar la programación y a cambiar los circuitos propuestos en el proceso.
 
 ## Aplicaciones utilizadas
