@@ -24,14 +24,16 @@ Para leer datos desde los pines analógicos se usa la función `analogRead();`
 A continuación se mostraran ejemplos de conexión a la placa Arduino mientras se muestra el valor de la entrada analógica a través del monitor serial. El código que se subió a la placa Arduino es el siguiente:
 ```
 int entrada;
+const int in = A0;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(A0,INPUT);
+  pinMode(in,INPUT);
 }
 
 void loop() {
-  entrada = analogRead(A0);
+  
+  entrada = analogRead(in);
   Serial.print("La entrada analógica es: ");
   Serial.println(entrada);
 }
@@ -54,3 +56,20 @@ Como su nombre lo indica, una foto-resistencia o LDR es una resistencia que camb
 </div>
 
 Según cambie la iluminación en el ambiente que sensa el LDR el valor de la entrada analógica variará.
+
+### LEDs Infrarrojos
+Los LEDs Infrarrojos vienen en pares, uno es el LED emisor (el blanco) y otro es el LED receptor (el negro).
+<div id="leds_ir">
+  <ul align="center">
+    <img alt="JPG" height = "150" src="https://tienda.sawers.com.bo/image/cache/catalog/00653-500x500.jpg">
+    </ul>
+</div>
+El LED emisor envía una señal infrarroja que el LED receptor captará con mayor o menor intensidad en función de la distancia que los separe y si existe algun material entre medio de esos 2. Si existe un objeto que interfiera entre los LEDs la señal analógica que perciba la placa Arduino se elevará.
+
+Ahora hay un problema, Tinkercad no posee los LEDs infrarrojos como componentes, por lo que no es posible probar ni armar el circuito en dicha página. Sin embargo, el circuito fue probado en físico y puedo afirmar que funciona sin ningún problema. Las conexiones realizadas se representan en la siguiente imagen, siendo el LED rojo una representación del LED receptor y el LED blanco una representación del LED emisor:
+<div id="leds_ir">
+  <ul align="center">
+    <img alt="JPG" height = "300" src="https://i.ibb.co/xq27Kkz/infr.jpg">
+    </ul>
+</div>
+Notese que los LEDs están conectados al revés, uno con el Cátodo a GND y otro con el Anodo en GND. Además, es importante resaltar que estos LEDs son muy delicados, se recomienda usar las resistencias mostradas en el diagrama para evitar que se dañen componentes.
