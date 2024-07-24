@@ -64,6 +64,6 @@ Con esto termina este capítulo. Al igual que con el capítulo anterior, se ha a
 Las conexiones empleadas para el [Programa](pruebaMonitorSerial.ino) son las mismas del anterior capítulo, es decir, las siguientes:
 <div id="monitorSerial">
   <ul align="center">
-    <img alt="JPG" src="https://i.ibb.co/zrLpbhm/Primer-Programa.jpg">
+    <img alt="JPG" src="https://i.postimg.cc/FFbNxFvQ/Primer-Programa.png">
     </ul>
 </div>
