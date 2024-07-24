@@ -75,6 +75,6 @@ Con esto termina la introducción a Arduino. Además se ha añadido un pequeño 
 Las conexiones empleadas para el [Programa](primerSketch.ino) son las siguientes:
 <div id="PrimerPrograma">
   <ul align="center">
-    <img alt="JPG" src="https://i.ibb.co/zrLpbhm/Primer-Programa.jpg">
+    <img alt="JPG" src="https://i.postimg.cc/FFbNxFvQ/Primer-Programa.png">
     </ul>
 </div>
