@@ -69,7 +69,7 @@ El LED emisor envía una señal infrarroja que el LED receptor captará con mayo
 Ahora hay un problema, Tinkercad no posee los LEDs infrarrojos como componentes, por lo que no es posible probar ni armar el circuito en dicha página. Sin embargo, el circuito fue probado en físico y puedo afirmar que funciona sin ningún problema. Las conexiones realizadas se representan en la siguiente imagen, siendo el LED rojo una representación del LED receptor y el LED blanco una representación del LED emisor:
 <div id="leds_ir">
   <ul align="center">
-    <img alt="JPG" height = "300" src="https://i.ibb.co/xq27Kkz/infr.jpg">
+    <img alt="JPG" height = "300" src="https://i.postimg.cc/Dfc3XCQv/infr.jpg">
     </ul>
 </div>
 Notese que los LEDs están conectados al revés, uno con el Cátodo a GND y otro con el Anodo en GND. Además, es importante resaltar que estos LEDs son muy delicados, se recomienda usar las resistencias mostradas en el diagrama para evitar que se dañen componentes.
