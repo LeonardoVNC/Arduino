@@ -140,3 +140,5 @@ Las conexiones empleadas para el [Programa](pruebaMonitorSerial.ino) son las mis
     <img alt="JPG" src="https://i.postimg.cc/FFbNxFvQ/Primer-Programa.png">
     </ul>
 </div>
+
+Además se agrega otro [Programa](MonitorSerial-LEDs.ino) que emplea los conceptos explicados para los Strings e implementa 3 casos de entrada, uno para Encender el LED, otro para Apagar el LED y otro caso en el que se ingresan números para determinar el número de veces que parpadeará el LED.
