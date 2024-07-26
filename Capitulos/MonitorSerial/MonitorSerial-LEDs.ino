@@ -1,6 +1,6 @@
 String input = "";
 char c;
-int led = 8;
+int led = 2;
 void setup() {
   Serial.begin(9600);
   pinMode(led, OUTPUT);
