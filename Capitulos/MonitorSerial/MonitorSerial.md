@@ -11,26 +11,48 @@ void setup(){
 ```
 Este comando inicializa el puerto serial en 9600 bauds, es decir, la velocidad de comunicación estandar para Arduino. Es importante destacar que Arduino puede soportar otras velocidades, pero 9600 es el estándar y la velocidad que suele usarse.
 ## Salida de datos
-Arduino puede imprimir la información que le pidamos a traves del monitor serial, esto a través de los comandos `Serial.print();` y `Serial.println();`, los cuales son bastante similares al resto de comandos de impresion de otros lenguajes de programación, es decir, basta con introducir texto entre comillas dentro de los parentesis para imprimir el mensaje deseado, además, podemos colocar variables dentro de los parentesis para que se imprima su valor y se puede usar `\n` para hacer un salto de línea:
+Arduino puede imprimir la información que le pidamos a traves del monitor serial, esto a través de comandos como `Serial.print();` o `Serial.println();`, los cuales son bastante similares al resto de comandos de impresion de otros lenguajes de programación, es decir, basta con introducir texto entre comillas dentro de los parentesis para imprimir el mensaje deseado.
+
+Además, podemos colocar variables dentro de los parentesis para que se imprima su valor, también se puede usar `\n` para hacer un salto de línea:
 ```
 int n = 0;
+
 void setup(){
     Serial.begin(9600);
     Serial.println("\nHola");
 }
+
 void loop() {
     Serial.print("Contador: ");
     Serial.println(n);
     n++;
 }
 ```
+También es posible hacer concatenaciones, pero para esto se debe operar únicamente con Strings. En caso de concatenar con otro tipo de dato saltaría un error de compilación o podrían existir problemas durante la ejecución del programa, para esto, podemos Castear un tipo de dato a un String y asi implementarlo correctamente dentro del `print`. Ejecute el siguiente código y observe la diferencia de la salida de estos 2 casos:
+```
+int i = 0;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  i++;
+  Serial.println("Salida con casteo: " + String(i));
+  Serial.println("Salida sin casteo: " + i);
+  delay(800);
+}
+```
+
 ## Entrada de datos
 Es posible enviar datos desde el monitor serial hasta la placa Arduino. Para esto se usa el comando `Serial.read();` el cual suele estar acompañado de una variable char para guardar la entrada y poder procesarla sin perder su valor luego de su primer uso, a continuación un ejemplo de su uso:
 ```
 char input;
+
 void setup() {
   Serial.begin(9600);
 }
+
 void loop() {
   input = Serial.read();
   Serial.print("La entrada es: ");
@@ -56,7 +78,7 @@ void loop() {
 }
 
 ```
-De modo que si hay 1 o más caractéres disponibles para leer se sobreescribirá la información alojada en la variable input, caso contrario, se ignorará el bloque de código.
+De modo que si hay 1 o más caractéres disponibles para leer, se sobreescribirá la información alojada en la variable input, caso contrario, se ignorará el bloque de código.
 
 
 Con esto termina este capítulo. Al igual que con el capítulo anterior, se ha añadido un pequeño programa que muestra un poco de los conceptos presentados en este documento.
