@@ -65,9 +65,11 @@ void loop() {
 En caso de no existir un dato a leer en el Monitor Serial, el char se sobre-escribira con "�". Es decir, por defecto `Serial.read();` no esperará a que introduzcamos un dato para seguir con el flujo del programa, se debe tener cuidado con esto. Para evitar este problema se puede hacer uso de la función `Serial.available();`, la cual devuelve un valor int que indica cuantos caractéres tiene a continuación el monitor serial, por lo que podemos usar un if para confirmar la entrada de datos y asi no sobreescribir la variable de no ser necesario:
 ```
 char input;
+
 void setup() {
   Serial.begin(9600);
 }
+
 void loop() {
   if (Serial.available() > 0) {
     input = Serial.read();
@@ -76,10 +78,59 @@ void loop() {
     delay(1000);
   }
 }
-
 ```
 De modo que si hay 1 o más caractéres disponibles para leer, se sobreescribirá la información alojada en la variable input, caso contrario, se ignorará el bloque de código.
 
+### Trabajando con Strings
+En caso de que las operaciones de entrada de datos únicamente con char resulten algo limitantes, es posible trabajar con Strings, lo cual será algo más complicado en el código, pero resultará en una mayor variedad de operaciones y más flexibilidad a la hora de decidir como actuará nuestro programa en función de la entrada.
+
+Para leer correctamente los datos enviados por el usuario vamos a leer caractér a caractér la información y apilarla poco a poco en un variable String hasta que se detecte un salto de línea. Esto lo hacemos de la siguiente manera:
+```
+String input = "";
+char c;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+if (Serial.available() > 0) {
+    c = Serial.read();
+    if (c == '\n' || c == '\r') {
+      //TODO Implementar casos para tratar el String
+      input = "";
+    } else {
+      input += c;
+    }
+  }
+}
+```
+Es importante destacar que una vez se detecte un salto de línea se tomará el String como terminado y se procederá a analizar a que caso corresponde la entrada al compararse con las entradas planteadas. En el caso de este programa las entradas aun no se han implementado.
+
+Las variables de tipo String tienen métodos que podemos usar a nuestro favor. Los más importantes son:
+* **equals()**
+
+  Es una función que compara 2 Strings, en caso de que los Strings sean idénticos devolverá true, si no son iguales (contando minúsculas, mayúsculas y espacios) devuelve false. Sigue la siguiente estructura:
+  ```
+  StringA.equals(StringB);
+  ```
+
+  Su importancia en este capítulo radica en que es de vital importancia para comparar el input del usuario con las entradas que se planteen en el programa.
+* **toLowerCase()**
+
+  Es un método que transforma todos los caractéres del String en minúsculas. Es importante destacar que su tipo de retorno es void, es decir, no podemos guardar el String en minúscula en otra variable. 
+  
+  Toma su importancia en este capítulo si se quiere que la entrada del usuario no distinga mayúsculas o minúsculas y pueda compararse sin problema con las entradas planteadas.
+* **replace()**
+
+  Este método reemplaza componentes del String por otros, es decir, si dentro de nuestro String existe una secuencia de caractéres identica a la que planteemos, este método la reemplazará por otra secuencia. Tiene la siguiente estructura:
+
+  ```
+  String.replace(CadenaAReemplazar, CadenaSustituta);
+  ```
+  De modo que la CadenaSustituta tomará el lugar de la CadenaAReemplazar.
+
+  Es especialmente útil en este capítulo para eliminar los espacios vaciós de nuestros Strings, dado que hay veces que se puede escapar un espacio al inicio o al final de la entrada del usuario, y este caractér ya evita que `equals()` los clasifique como identicos, por lo que eliminar estos caracteres sobrantes al inicio o al final ayuda a evitar problemas.
 
 Con esto termina este capítulo. Al igual que con el capítulo anterior, se ha añadido un pequeño programa que muestra un poco de los conceptos presentados en este documento.
 
